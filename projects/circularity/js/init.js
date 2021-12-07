@@ -33,11 +33,9 @@ var init = function (window) {
         }
 
         // TODO 3 / 8 : Call the drawCircle() function 
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
+        for (var i = 0; i <99; i++){
+           
+        }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -49,6 +47,9 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
+           for (var k = 0; i < 99; k++) {
+               physikz.updatePosition(circles[k]);
+           }
             physikz.updatePosition(circles[0]);
 	        physikz.updatePosition(circles[1]);
 	        physikz.updatePosition(circles[2]);
@@ -79,7 +80,15 @@ var init = function (window) {
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
             }
-            
+            if ( circle.x < 0 ) {
+                circle.x = canvas.width;
+            }
+            if ( circle.y < 0) {
+                circle.y = canvas.height;
+            }
+            if (circle.y > canvas.height) {
+                circle.y = 0;
+            }
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
             
 
